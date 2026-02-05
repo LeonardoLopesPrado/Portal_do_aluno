@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Portal do Aluno - FAPCOM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .active-tab { border-bottom: 4px solid #0891b2; color: #0891b2; font-weight: bold; }
+        .hidden { display: none; }
+        /* Ajuste para tabelas no S24 Ultra */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-[#f4f7f6] font-sans antialiased text-gray-700 pb-12">
+
+    <div class="bg-[#f0f0f0] border-b border-gray-300 text-[10px] text-gray-600 px-4 py-1.5 hidden md:flex justify-end items-center gap-6 font-medium">
+        <span>PRODUÇÃO AUDIOVISUAL</span>
+        <span class="border-l border-gray-400 h-3"></span>
+        <span>ALTERAR CURSO</span>
+        <span class="border-l border-gray-400 h-3"></span>
+        <span class="uppercase">GABRIELA DEVITE CANTADEIRO (RA: 222463)</span>
+    </div>
+    
+    <div class="md:hidden bg-[#f0f0f0] border-b border-gray-300 text-[9px] text-gray-500 px-3 py-1 flex overflow-x-auto whitespace-nowrap no-scrollbar gap-4 shadow-inner">
+        <span class="font-bold text-gray-700">CURSO: PRODUÇÃO AUDIOVISUAL</span>
+        <span class="text-cyan-700 underline font-bold">ALTERAR</span>
+    </div>
+
+    <nav class="bg-white border-b border-gray-200 p-3 sticky top-0 z-50 flex justify-between items-center shadow-sm">
+        <div class="flex items-center gap-3">
+            <div class="bg-red-700 p-1.5 rounded-sm">
+                <i class="fas fa-bars text-white text-xs"></i>
+            </div>
+            <span class="font-bold text-[#b91c1c] text-lg tracking-tighter">FAPCOM</span>
+        </div>
+        
+        <div class="flex items-center gap-5">
+            <div class="hidden sm:flex gap-4 text-[9px] font-bold text-gray-500">
+                <div class="flex flex-col items-center"><i class="fas fa-dollar-sign text-sm mb-0.5"></i> FINANCEIRO</div>
+                <div class="flex flex-col items-center"><i class="fas fa-file-signature text-sm mb-0.5"></i> REQUERIMENTOS</div>
+                <div class="flex flex-col items-center"><i class="fas fa-th text-sm mb-0.5"></i> GRADE</div>
+            </div>
+            <div class="w-9 h-9 rounded-full border-2 border-white overflow-hidden shadow-md ring-1 ring-gray-200">
+                <img src="Gabriela.png" alt="Perfil" onerror="this.src='https://via.placeholder.com/100'">
+            </div>
+        </div>
+    </nav>
+
+    <main class="p-4 max-w-4xl mx-auto">
+        
+        <div class="flex justify-between items-start mb-4">
+            <div>
+                <h1 class="text-xl font-light text-gray-800 leading-tight">Gabriela Devite Cantadeiro</h1>
+                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-1">RA: 222463</p>
+            </div>
+        </div>
+
+        <div class="flex border-b border-gray-300 mb-6 sticky top-[60px] bg-[#f4f7f6] z-40 text-[11px] uppercase tracking-wider">
+            <button id="btn-dados" onclick="switchTab('dados')" class="active-tab px-4 py-3 transition-all">Dados pessoais</button>
+            <button id="btn-mov" onclick="switchTab('mov')" class="text-gray-400 px-4 py-3 transition-all">Movimentação acadêmica</button>
+        </div>
+
+        <div id="content-dados" class="space-y-6 animate-in fade-in duration-300">
+            <div class="bg-white rounded-xl shadow-sm p-4 flex gap-5 border-t-4 border-cyan-600">
+                <img src="Gabriela.png" class="w-24 h-32 object-cover rounded shadow-md border-2 border-gray-50" onerror="this.src='https://via.placeholder.com/150'">
+                <div class="grid grid-cols-1 gap-3 text-xs">
+                    <div><p class="text-cyan-600 font-black text-[9px] uppercase">Curso</p><p class="font-medium text-gray-800">Produção Audiovisual</p></div>
+                    <div><p class="text-cyan-600 font-black text-[9px] uppercase">Turno</p><p class="font-medium text-gray-800">Matutino</p></div>
+                    <div><p class="text-cyan-600 font-black text-[9px] uppercase">Habilitação</p><p class="font-medium text-gray-800 text-[10px]">Produção Audiovisual</p></div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl shadow-sm space-y-4">
+                <h2 class="text-cyan-600 font-bold text-xs border-l-4 border-cyan-600 pl-2 uppercase">Identificação</h2>
+                <div class="grid grid-cols-2 gap-4 text-[11px]">
+                    <div><label class="text-gray-400 font-bold block uppercase text-[9px]">Nascimento</label><p>22/02/2002</p></div>
+                    <div><label class="text-gray-400 font-bold block uppercase text-[9px]">Naturalidade</label><p>São Paulo</p></div>
+                </div>
+                <div class="pt-2 border-t">
+                    <label class="text-gray-400 font-bold block uppercase text-[9px] mb-2">Filiação (Mãe)</label>
+                    <div class="bg-gray-50 p-2 rounded border text-xs">Edna Maria Devite Cantadeiro</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl shadow-sm space-y-4">
+                <h2 class="text-cyan-600 font-bold text-xs border-l-4 border-cyan-600 pl-2 uppercase">Endereço</h2>
+                <div class="relative">
+                    <label class="text-[9px] font-bold text-gray-400 uppercase">Logradouro</label>
+                    <div class="flex"><input type="text" readonly value="Álvaro Fragoso, 848 - casa 7" class="w-full border bg-gray-50 p-2.5 rounded-l-lg text-xs outline-none"><span class="bg-cyan-600 text-white p-2.5 px-4 rounded-r-lg"><i class="fas fa-tag"></i></span></div>
+                </div>
+                <button class="w-full bg-[#2a828a] text-white py-4 rounded-xl font-bold text-xs shadow-lg active:scale-95 transition-all">
+                    <i class="fas fa-save mr-2"></i> ATUALIZAR DADOS
+                </button>
+            </div>
+        </div>
+
+        <div id="content-mov" class="hidden space-y-6 animate-in slide-in-from-right duration-300">
+            <div class="grid grid-cols-2 gap-2">
+                <div class="bg-cyan-50 border border-cyan-100 p-3 rounded-lg">
+                    <p class="text-[9px] text-cyan-700 font-bold uppercase">Conclusão</p>
+                    <p class="text-xs font-bold text-cyan-900">28/09/2025</p>
+                </div>
+                <div class="bg-gray-100 p-3 rounded-lg">
+                    <p class="text-[9px] text-gray-500 font-bold uppercase">Ingresso</p>
+                    <p class="text-xs font-bold text-gray-700">01/07/2022</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div class="bg-gray-700 text-white p-3 text-[10px] font-bold uppercase">ENADE</div>
+                <div class="overflow-x-auto no-scrollbar">
+                    <table class="w-full text-[11px] text-left">
+                        <thead class="bg-gray-50 border-b">
+                            <tr>
+                                <th class="p-3">Período</th>
+                                <th class="p-3">Data Prova</th>
+                                <th class="p-3">MEC</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y text-gray-600">
+                            <tr><td class="p-3">2025/2</td><td class="p-3 text-blue-500 font-medium italic">Ingressante</td><td class="p-3">NãoHabilitado</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
+                <div class="bg-[#2a828a] text-white p-3 text-[10px] font-bold uppercase">Histórico de Movimentação</div>
+                <div class="overflow-x-auto no-scrollbar">
+                    <table class="w-full text-[10px] text-left whitespace-nowrap">
+                        <thead class="bg-gray-50 border-b font-bold text-gray-400">
+                            <tr>
+                                <th class="p-3 uppercase">Data</th>
+                                <th class="p-3 uppercase">Situação</th>
+                                <th class="p-3 uppercase">Motivo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y text-gray-600">
+                            <tr><td class="p-3">14/06/2025</td><td class="p-3">Matriculado</td><td class="p-3 italic">Automático</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function switchTab(tab) {
+            const contentDados = document.getElementById('content-dados');
+            const contentMov = document.getElementById('content-mov');
+            const btnDados = document.getElementById('btn-dados');
+            const btnMov = document.getElementById('btn-mov');
+
+            if (tab === 'dados') {
+                contentDados.classList.remove('hidden');
+                contentMov.classList.add('hidden');
+                btnDados.classList.add('active-tab');
+                btnMov.classList.remove('active-tab');
+                btnMov.classList.add('text-gray-400');
+            } else {
+                contentDados.classList.add('hidden');
+                contentMov.classList.remove('hidden');
+                btnMov.classList.add('active-tab');
+                btnMov.classList.remove('text-gray-400');
+                btnDados.classList.remove('active-tab');
+                btnDados.classList.add('text-gray-400');
+            }
+            window.scrollTo(0, 0); // Volta ao topo ao trocar
+        }
+    </script>
+</body>
+</html>
