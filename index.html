@@ -14,6 +14,62 @@
 </head>
 <body class="bg-[#f4f7f6] font-sans antialiased text-gray-700 pb-12">
 
+<div id="login-screen" class="fixed inset-0 z-[100] flex items-center justify-center bg-[#f4f7f6]">
+    <div class="w-full max-w-sm p-8 space-y-6">
+        <div class="text-center space-y-2">
+            <div class="inline-block bg-red-700 p-3 rounded-lg mb-2">
+                <i class="fas fa-graduation-cap text-white text-3xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-red-700 tracking-tighter">PORTAL FAPCOM</h2>
+            <p class="text-gray-400 text-xs uppercase font-bold tracking-widest">Acesso do Aluno</p>
+        </div>
+
+        <div class="space-y-4">
+            <div>
+                <label class="text-[10px] font-bold text-gray-400 uppercase ml-1">Usuário (RA)</label>
+                <input type="text" id="user-ra" placeholder="Digite seu RA" 
+                       class="w-full border border-gray-300 p-3 rounded-xl outline-none focus:ring-2 focus:ring-red-600 transition-all text-sm">
+            </div>
+            <div>
+                <label class="text-[10px] font-bold text-gray-400 uppercase ml-1">Senha</label>
+                <input type="password" id="user-pass" placeholder="••••••••" 
+                       class="w-full border border-gray-300 p-3 rounded-xl outline-none focus:ring-2 focus:ring-red-600 transition-all text-sm">
+            </div>
+            
+            <button onclick="checkLogin()" 
+                    class="w-full bg-red-700 text-white font-bold py-4 rounded-xl shadow-lg active:scale-95 transition-all uppercase text-xs tracking-widest">
+                Entrar no Portal
+            </button>
+        </div>
+
+        <div class="text-center">
+            <a href="#" class="text-[10px] text-cyan-700 font-bold uppercase hover:underline">Esqueci minha senha</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function checkLogin() {
+        const ra = document.getElementById('user-ra').value;
+        const pass = document.getElementById('user-pass').value;
+
+        // VALORES CHUMBADOS EXATOS
+        const raCorreto = "222463";
+        const senhaCorreta = "22022002";
+
+        if (ra === raCorreto && pass === senhaCorreta) {
+            // Se estiver correto, remove a tela de login
+            document.getElementById('login-screen').classList.add('hidden');
+            // Feedback sonoro opcional ou apenas entra
+            console.log("Acesso concedido");
+        } else {
+            // Se estiver errado, avisa o usuário
+            alert("RA ou senha incorretos. Tente novamente.");
+            document.getElementById('user-pass').value = ""; // Limpa a senha
+        }
+    }
+</script>
+
     <div class="bg-[#f0f0f0] border-b border-gray-300 text-[10px] text-gray-600 px-4 py-1.5 hidden md:flex justify-end items-center gap-6 font-medium">
         <span>PRODUÇÃO AUDIOVISUAL</span>
         <span class="border-l border-gray-400 h-3"></span>
