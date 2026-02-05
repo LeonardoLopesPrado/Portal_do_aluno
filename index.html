@@ -9,7 +9,6 @@
     <style>
         .active-tab { border-bottom: 4px solid #0891b2; color: #0891b2; font-weight: bold; }
         .hidden { display: none; }
-        /* Ajuste para tabelas no S24 Ultra */
         .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
@@ -55,6 +54,10 @@
                 <h1 class="text-xl font-light text-gray-800 leading-tight">Gabriela Devite Cantadeiro</h1>
                 <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-1">RA: 222463</p>
             </div>
+            <div class="flex items-center gap-2 bg-white border border-gray-200 px-3 py-1 rounded-full shadow-sm">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <span class="text-[10px] font-bold text-green-600 uppercase">Em curso</span>
+            </div>
         </div>
 
         <div class="flex border-b border-gray-300 mb-6 sticky top-[60px] bg-[#f4f7f6] z-40 text-[11px] uppercase tracking-wider">
@@ -63,6 +66,7 @@
         </div>
 
         <div id="content-dados" class="space-y-6 animate-in fade-in duration-300">
+            
             <div class="bg-white rounded-xl shadow-sm p-4 flex gap-5 border-t-4 border-cyan-600">
                 <img src="Gabriela.png" class="w-24 h-32 object-cover rounded shadow-md border-2 border-gray-50" onerror="this.src='https://via.placeholder.com/150'">
                 <div class="grid grid-cols-1 gap-3 text-xs">
@@ -72,43 +76,75 @@
                 </div>
             </div>
 
-            <div class="bg-white p-5 rounded-xl shadow-sm space-y-4">
-                <h2 class="text-cyan-600 font-bold text-xs border-l-4 border-cyan-600 pl-2 uppercase">Identificação</h2>
+            <div class="bg-white p-5 rounded-xl shadow-sm space-y-4 border border-gray-100">
+                <h2 class="text-cyan-600 font-bold text-xs border-l-4 border-cyan-600 pl-2 uppercase">2. Identificação</h2>
                 <div class="grid grid-cols-2 gap-4 text-[11px]">
-                    <div><label class="text-gray-400 font-bold block uppercase text-[9px]">Nascimento</label><p>22/02/2002</p></div>
-                    <div><label class="text-gray-400 font-bold block uppercase text-[9px]">Naturalidade</label><p>São Paulo</p></div>
+                    <div><label class="text-gray-400 font-bold block uppercase text-[8px]">Nascimento</label><p>22/02/2002</p></div>
+                    <div><label class="text-gray-400 font-bold block uppercase text-[8px]">Naturalidade</label><p>São Paulo</p></div>
                 </div>
-                <div class="pt-2 border-t">
-                    <label class="text-gray-400 font-bold block uppercase text-[9px] mb-2">Filiação (Mãe)</label>
-                    <div class="bg-gray-50 p-2 rounded border text-xs">Edna Maria Devite Cantadeiro</div>
+                <div class="pt-2 border-t border-gray-50">
+                    <label class="text-gray-400 font-bold block uppercase text-[8px] mb-1">Filiação (Mãe)</label>
+                    <div class="bg-gray-50 p-2 rounded border border-gray-200 text-xs">Edna Maria Devite Cantadeiro</div>
                 </div>
             </div>
 
-            <div class="bg-white p-5 rounded-xl shadow-sm space-y-4">
-                <h2 class="text-cyan-600 font-bold text-xs border-l-4 border-cyan-600 pl-2 uppercase">Endereço</h2>
-                <div class="relative">
-                    <label class="text-[9px] font-bold text-gray-400 uppercase">Logradouro</label>
-                    <div class="flex"><input type="text" readonly value="Álvaro Fragoso, 848 - casa 7" class="w-full border bg-gray-50 p-2.5 rounded-l-lg text-xs outline-none"><span class="bg-cyan-600 text-white p-2.5 px-4 rounded-r-lg"><i class="fas fa-tag"></i></span></div>
+            <div class="bg-white p-5 rounded-xl shadow-sm space-y-4 border border-gray-100">
+                <h2 class="text-cyan-600 font-bold text-xs border-l-4 border-cyan-600 pl-2 uppercase">3. Contato</h2>
+                <div class="space-y-3">
+                    <div>
+                        <label class="text-[8px] font-bold text-gray-400 uppercase">E-mail</label>
+                        <div class="flex"><input type="text" readonly value="gabrieladevite02@gmail.com" class="w-full border border-gray-200 bg-gray-50 p-2 rounded-l-md text-[11px] outline-none"><span class="bg-cyan-600 text-white p-2 px-3 rounded-r-md"><i class="fas fa-star text-[8px]"></i></span></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="text-[8px] font-bold text-gray-400 uppercase">Tel. Residencial</label>
+                            <div class="flex"><input type="text" readonly value="(11) 96325-1885" class="w-full border border-gray-200 bg-gray-50 p-2 rounded-l-md text-[11px] outline-none"><span class="bg-cyan-600 text-white p-2 px-3 rounded-r-md"><i class="fas fa-star text-[8px]"></i></span></div>
+                        </div>
+                        <div>
+                            <label class="text-[8px] font-bold text-gray-400 uppercase">Tel. Celular</label>
+                            <div class="flex"><input type="text" readonly value="(11) 94542-4972" class="w-full border border-gray-200 bg-gray-50 p-2 rounded-l-md text-[11px] outline-none"><span class="bg-cyan-600 text-white p-2 px-3 rounded-r-md"><i class="fas fa-star text-[8px]"></i></span></div>
+                        </div>
+                    </div>
                 </div>
-                <button class="w-full bg-[#2a828a] text-white py-4 rounded-xl font-bold text-xs shadow-lg active:scale-95 transition-all">
-                    <i class="fas fa-save mr-2"></i> ATUALIZAR DADOS
+            </div>
+
+            <div class="bg-white p-5 rounded-xl shadow-sm space-y-4 border border-gray-100">
+                <h2 class="text-cyan-600 font-bold text-xs border-l-4 border-cyan-600 pl-2 uppercase">4. Endereço</h2>
+                <div class="grid grid-cols-1 gap-3">
+                    <div class="relative">
+                        <label class="text-[8px] font-bold text-gray-400 uppercase">Logradouro</label>
+                        <div class="flex"><input type="text" readonly value="Álvaro Fragoso, 848 - casa 7" class="w-full border border-gray-200 bg-gray-50 p-2 rounded-l-md text-[11px] outline-none"><span class="bg-cyan-600 text-white p-2 px-3 rounded-r-md"><i class="fas fa-tag text-[8px]"></i></span></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="text-[8px] font-bold text-gray-400 uppercase">Bairro</label>
+                            <input type="text" readonly value="Vila Independência" class="w-full border border-gray-200 bg-gray-50 p-2 rounded text-[11px] outline-none">
+                        </div>
+                        <div>
+                            <label class="text-[8px] font-bold text-gray-400 uppercase">CEP</label>
+                            <input type="text" readonly value="04223-000" class="w-full border border-gray-200 bg-gray-50 p-2 rounded text-[11px] outline-none">
+                        </div>
+                    </div>
+                </div>
+                <button class="w-full bg-[#2a828a] text-white py-4 rounded-xl font-bold text-xs shadow-lg active:scale-95 transition-all mt-4 uppercase">
+                    <i class="fas fa-save mr-2"></i> Atualizar Dados
                 </button>
             </div>
         </div>
 
         <div id="content-mov" class="hidden space-y-6 animate-in slide-in-from-right duration-300">
-            <div class="grid grid-cols-2 gap-2">
+            <div class="grid grid-cols-2 gap-2 text-center uppercase">
                 <div class="bg-cyan-50 border border-cyan-100 p-3 rounded-lg">
-                    <p class="text-[9px] text-cyan-700 font-bold uppercase">Conclusão</p>
+                    <p class="text-[8px] text-cyan-700 font-bold">Conclusão</p>
                     <p class="text-xs font-bold text-cyan-900">28/09/2026</p>
                 </div>
                 <div class="bg-gray-100 p-3 rounded-lg">
-                    <p class="text-[9px] text-gray-500 font-bold uppercase">Ingresso</p>
-                    <p class="text-xs font-bold text-gray-700">01/07/2022</p>
+                    <p class="text-[8px] text-gray-500 font-bold">Ingresso</p>
+                    <p class="text-xs font-bold text-gray-700">01/07/2024</p>
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
                 <div class="bg-gray-700 text-white p-3 text-[10px] font-bold uppercase">ENADE</div>
                 <div class="overflow-x-auto no-scrollbar">
                     <table class="w-full text-[11px] text-left">
@@ -138,7 +174,7 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y text-gray-600">
-                            <tr><td class="p-3">14/06/2025</td><td class="p-3">Matriculado</td><td class="p-3 italic">Automático</td></tr>
+                            <tr><td class="p-3 text-blue-600 font-bold uppercase">14/06/2025</td><td class="p-3">Matriculado</td><td class="p-3 italic">Automático</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -167,7 +203,7 @@
                 btnDados.classList.remove('active-tab');
                 btnDados.classList.add('text-gray-400');
             }
-            window.scrollTo(0, 0); // Volta ao topo ao trocar
+            window.scrollTo(0, 0);
         }
     </script>
 </body>
